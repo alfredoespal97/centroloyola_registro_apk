@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="grados">
+        <item>Primer Grado</item>
+        <item>Segundo Grado</item>
+        <item>Tercer Grado</item>
+        <item>Cuarto Grado</item>
+        <item>Quinto Grado</item>
+        <item>Sexto Grado</item>
+        <item>Septimo Grado</item>
+        <item>Octavo Grado</item>
+        <item>Noveno Grado</item>
+    </string-array>
+</resources>
