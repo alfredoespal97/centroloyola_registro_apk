@@ -2,9 +2,11 @@
 
 buildscript {
     repositories {
-        maven{url "http://pypi.prod.uci.cu/repository/maven-all/"}
-        maven{url "http://pypi.prod.uci.cu/repository/jitpack.io/"}
-        maven{url "http://pypi.prod.uci.cu/repository/jcenter/"}
+//        maven{url "http://pypi.prod.uci.cu/repository/maven-all/"}
+//        maven{url "http://pypi.prod.uci.cu/repository/jitpack.io/"}
+//        maven{url "http://pypi.prod.uci.cu/repository/jcenter/"}
+        mavenCentral()
+        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.2'
@@ -16,10 +18,11 @@ buildscript {
 
 allprojects {
     repositories {
-        maven{url "http://pypi.prod.uci.cu/repository/maven-all/"}
-        maven{url "http://pypi.prod.uci.cu/repository/jitpack.io/"}
-        maven{url "http://pypi.prod.uci.cu/repository/jcenter/"}
-        
+//        maven{url "http://pypi.prod.uci.cu/repository/maven-all/"}
+//        maven{url "http://pypi.prod.uci.cu/repository/jitpack.io/"}
+//        maven{url "http://pypi.prod.uci.cu/repository/jcenter/"}
+        mavenCentral()
+        google()
     }
 }
 

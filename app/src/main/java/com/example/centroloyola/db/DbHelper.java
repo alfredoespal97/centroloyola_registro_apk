@@ -10,6 +10,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NOMBRE="centro.db";
     public static final String TABLE_ALUMNOS="t_alumno";
     public static final String TABLE_REGISTROS="t_registro";
+    public static final String TABLE_CALENDARIO="t_calendario";
     //private static final String TABLE_REGISTRO_ALUMNOS="t_registro_alumnos";
 
     public DbHelper(Context context) {
@@ -43,13 +44,22 @@ public class DbHelper extends SQLiteOpenHelper {
 //                "PRIMARY KEY(id_registro,id_alumno),\n" +
 //                "FOREIGN KEY(id_registro) REFERENCES t_registro(id_registro) ON delete cascade,\n" +
 //                "FOREIGN KEY(id_alumno) REFERENCES t_alumno(id_alumno) ON delete cascade)");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_CALENDARIO + "(" +
+                "id_calendario INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "fecha TEXT NOT NULL,"+
+                "id_registro INTEGER NOT NULL," +
+                "id_alumno INTEGER NOT NULL," +
+                "FOREIGN KEY(id_registro) REFERENCES t_registro(id_registro) ON delete cascade, " +
+                "FOREIGN KEY(id_alumno) REFERENCES id_alumno(id_alumno) ON delete cascade)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_ALUMNOS);
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_REGISTROS);
+        //sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_ALUMNOS);
+        //sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_REGISTROS);
+        //sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_CALENDARIO);
         //sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_REGISTRO_ALUMNOS);
     }
 

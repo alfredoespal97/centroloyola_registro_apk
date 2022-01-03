@@ -142,6 +142,11 @@ public class ListAlumnoActivity extends AppCompatActivity {
                 intent.putExtra("ID",id_registro);
                 startActivity(intent);
                 return true;
+            case R.id.calendario:
+                Intent i=new Intent(ListAlumnoActivity.this, AssistenActivity.class);
+                i.putExtra("ID",id_registro);
+                startActivity(i);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
